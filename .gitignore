@@ -1,0 +1,4 @@
+# Ignore .venv directories
+.venv/
+
+encounters_1m.csv

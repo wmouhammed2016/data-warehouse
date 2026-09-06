@@ -1,0 +1,316 @@
+product_id,product_name,category,sub_category,brand,unit_price,cost_price
+PROD-00237,Bluepeak Beverages Including,Grocery,Beverages,Halcyon,672.68,310.24
+PROD-00205,Acme Non-Fiction Method,Books,Non-Fiction,Bluepeak,113.64,78.47
+PROD-00190,Bluepeak Cookware But,Home & Kitchen,Cookware,Nimbus,636.66,354.41
+PROD-00065,Halcyon Beverages Common,Grocery,Beverages,Nimbus,88.22,46.96
+PROD-00001,Voyager Camping Middle,Sports & Outdoors,Camping,Nimbus,99.53,50.19
+PROD-00164,Bluepeak Puzzles Congress,Toys & Games,Puzzles,Crestline,407.08,211.46
+PROD-00094,Halcyon Cookware I,Home & Kitchen,Cookware,Nimbus,463.5,282.42
+PROD-00211,Nimbus Puzzles Special,Toys & Games,Puzzles,Zenith,858.87,396.27
+PROD-00193,Acme Haircare Memory,Beauty,Haircare,Voyager,272.49,158.59
+PROD-00258,Voyager Board Games Might,Toys & Games,Board Games,Nimbus,468.65,360.18
+PROD-00175,Voyager Board Games Peace,Toys & Games,Board Games,Voyager,112.4,51.89
+PROD-00028,Voyager Laptops Hospital,Electronics,Laptops,Crestline,338.3,241.33
+PROD-00074,Acme  Children Ask,Books,Children,Pinnacle,578.01,396.44
+PROD-00117,Pinnacle Accessories Team,Electronics,Accessories,Halcyon,547.9,342.56
+PROD-00238,Halcyon Pantry Else,Grocery,Pantry,Bluepeak,718.1,356.47
+PROD-00080,Halcyon Accessories Book,Electronics,Accessories,Voyager,534.78,283.48
+PROD-00051,Crestline Accessories Information,Electronics,Accessories,Nimbus,395.75,200.83
+PROD-00106,Crestline Laptops Fish,Electronics,Laptops,Pinnacle,447.05,212.54
+PROD-00104,Bluepeak Camping Benefit,Sports & Outdoors,Camping,Nimbus,735.44,378.87
+PROD-00056,Acme Makeup Trip,BEAUTY,Makeup,Nimbus,175.53,88.74
+PROD-00289,Nimbus Cameras Morning,Electronics,Cameras,Halcyon,528.31,232.69
+PROD-00085,Voyager Appliances Tonight,Home & Kitchen,Appliances,Halcyon,202.57,136.77
+PROD-00236,Zenith Decor Arm,Home & Kitchen,Decor,Voyager,389.99,199.15
+PROD-00167,Bluepeak Snacks Remember,Grocery,Snacks,Crestline,650.99,27416.59
+PROD-00150,Acme Fiction Rock,Books,Fiction,Crestline,154.12,109.15
+PROD-00293,Zenith Makeup Lay,Beauty,Makeup,Voyager,22.21,11.66
+PROD-00224,Acme Snacks How,gROCERY,Snacks,Acme,128.29,86.37
+PROD-00050,Bluepeak Haircare Race,Beauty,Haircare,,114.89,62.04
+PROD-00122,Acme Cameras Its,Electronics,Cameras,Halcyon,571.13,355.74
+PROD-00006,Halcyon Haircare Thought,Beauty,Haircare,Bluepeak,521.97,357.63
+PROD-00241,Crestline Appliances Economy,Home & Kitchen,Appliances,Crestline,144.91,72.76
+PROD-00022,Acme Snacks Action,Grocery,Snacks,Nimbus,606.2,320.75
+PROD-00206,Crestline Decor Such,Home & Kitchen,Decor,Acme,707.52,374.77
+PROD-00218,Crestline Makeup Look,Beauty,Makeup,Voyager,479.96,226.7
+PROD-00098,Voyager Pantry Perhaps,Grocery,Pantry,,121.58,83.05
+PROD-00153,Crestline Fitness Scientist,Sports & Outdoors,Fitness,Zenith,15.13,7.01
+PROD-00199,Nimbus Accessories Since,Electronics,Accessories,Voyager,481.57,233.98
+PROD-00216,Acme Furniture Pick,Home & Kitchen,Furniture,Zenith,557.33,362.59
+PROD-00043,Crestline Beverages Name,Grocery,Beverages,Crestline,n/a,280.32
+PROD-00062,Halcyon Men Seek,Apparel,Men,Bluepeak,95.04,39.19
+PROD-00032,Bluepeak Snacks Surface,Grocery,Snacks,,205.91,129.18
+PROD-00115,Acme Board Games Boy,Toys & Games,Board Games,Halcyon,555.3,290.35
+PROD-00013,Nimbus Appliances Simple,Home & Kitchen,Appliances,Voyager,367.92,202.35
+PROD-00036,Crestline Action Figures Itself,Toys & Games,Action Figures,Halcyon,92.28,65.21
+PROD-00138,Zenith Accessories Century,Electronics,Accessories,Nimbus,266.68,114.15
+PROD-00286,Crestline Camping First,Sports & Outdoors,Camping,Acme,634.53,286.01
+PROD-00105,Voyager Laptops Through,Electronics,Laptops,Halcyon,196.65,83.55
+PROD-00221,Acme Snacks World,Grocery,Snacks,Pinnacle,465.5,261.91
+PROD-00258,Voyager Board Games Might,Toys & Games,Board Games,Nimbus,468.65,360.18
+PROD-00148,Halcyon Children Church,Books,Children,Halcyon,332.14,206.94
+PROD-00233,Crestline Laptops Make,Electronics,Laptops,Halcyon,619.98abc,389.98
+PROD-00118,Acme Cycling Charge,Sports & Outdoors,Cycling,Voyager,618.11,346.9
+PROD-00096,Crestline Cycling Effort,Sports & Outdoors,Cycling,Pinnacle,729.89,349.18
+PROD-00243,Bluepeak Camping Around,Sports & Outdoors,Camping,Zenith,508.6,21930.32
+PROD-00123,Halcyon Skincare Respond,Beauty,Skincare,Halcyon,639.59,396.47
+PROD-00087,Crestline Skincare Manager,Beauty,Skincare,Halcyon,626.72,256.26
+PROD-00294,Nimbus Kids Compare,Apparel,Kids,Acme,451.29,260.85
+PROD-00136,Halcyon Cookware Girl,Home & Kitchen,Cookware,Voyager,243.0,100.93
+PROD-00282,Pinnacle Women She,Apparel,Women,Crestline,670.73,399.11
+PROD-00137,Acme Action Figures Fire,Toys & Games,Action Figures,Voyager,454.86,338.78
+PROD-00240,Nimbus Appliances Wonder,Home & Kitchen,Appliances,Bluepeak,384.66,221.36
+PROD-00113,Acme Accessories Officer,Electronics,Accessories,Zenith,504.54,304.97
+PROD-00209,  Bluepeak Laptops Arrive,Electronics,Laptops,Nimbus,693.79,389.58
+PROD-00235,Pinnacle Cameras Picture,Electronics,Cameras,Zenith,313.17,226.7
+PROD-00214,Acme Cycling Water,Sports & Outdoors,Cycling,Zenith,241.95,164.88
+PROD-00141,Voyager Women Sing,Apparel,Women,Bluepeak,206.23,143.04
+PROD-00273,Halcyon Phones Offer,Electronics,Phones,Voyager,249.97,133.26
+PROD-00157,Voyager Fitness Big,Sports & Outdoors,Fitness,Voyager,753.94,364.19
+PROD-00204,Crestline Laptops Simple,Electronics,Laptops,Nimbus,?,45.01
+PROD-00161,Halcyon Action Figures New   ,Toys & Games,Action Figures,Zenith,507.29,327.85
+PROD-00046,Voyager Phones Population,Electronics,Phones,Halcyon,483.24,212.54
+PROD-00232,Voyager Camping Quality,Sports & Outdoors,Camping,Bluepeak,113.06,70.11
+PROD-00264,Acme Camping Laugh,Sports & Outdoors,Camping,Crestline,251.53,173.46
+PROD-00228,Nimbus Children About,Books,Children,Voyager,329.52,150.02
+PROD-00230,Halcyon Beverages Current,Grocery,Beverages,Voyager,429.43,262.43
+PROD-00077,Crestline Decor Road,Home & Kitchen,Decor,Pinnacle,81.6,38.28
+PROD-00091,  Crestline Camping Single,Sports & Outdoors,Camping,Nimbus,494.18,256.84
+PROD-00254,Pinnacle Fitness Shake,Sports & Outdoors,Fitness,Bluepeak,458.69,288.11
+PROD-00298,Crestline Furniture Cultural,Home & Kitchen,Furniture,Zenith,511.12,264.56
+PROD-00192,Zenith Action Figures Yeah,Toys & Games,Action Figures,Crestline,593.54,258.23
+PROD-00261,Crestline Accessories Who,Electronics,Accessories,Nimbus,114.11,81.37
+PROD-00053,Crestline Snacks Nor,Grocery,Snacks,Halcyon,453.69,338.88
+PROD-00262,Zenith Cameras Statement,Electronics,Cameras,Zenith,677.03,385.05
+PROD-00018,Acme Laptops A,Electronics,Laptops,Acme,--,57.18
+PROD-00244,Pinnacle Action Figures Career,Toys & Games,Action Figures,,751.16,380.63
+PROD-00155,Acme Appliances Administration,Home & Kitchen,Appliances,Zenith,543.67,341.1
+PROD-00226,Pinnacle Makeup West,Beauty,Makeup,Zenith,453.16,212.26
+PROD-00271,Bluepeak Children Piece,Books,Children,Nimbus,757.4,336.04
+PROD-00107,Nimbus Furniture Serious,Home & Kitchen,Furniture,Crestline,17.16,11.94
+PROD-00134,Voyager Decor Field,Home & Kitchen,Decor,Nimbus,42.49,23.11
+PROD-00088,Voyager Camping This,Sports & Outdoors,Camping,Bluepeak,615.69,276.46
+PROD-00202,Acme Cameras Face,Electronics,Cameras,Bluepeak,598.41,309.81
+PROD-00182,Zenith Appliances Early,Home & Kitchen,Appliances,Zenith,211.43,157.61
+PROD-00086,Zenith Cycling Organization,Sports & Outdoors,Cycling,Crestline,$854.45,362.52
+PROD-00210,Bluepeak  Furniture We,Home & Kitchen,Furniture,Bluepeak,633.8,255.56
+PROD-00108,Voyager Women Choice,Apparel,Women,Crestline,102.55,57.18
+PROD-00229,Pinnacle Camping Old,Sports & Outdoors,Camping,Bluepeak,652.71,296.73
+PROD-00034,Pinnacle Decor Administration,Home & Kitchen,Decor,Nimbus,182.37,107.59
+PROD-00004,Halcyon Snacks That,Grocery,Snacks,Acme,363.4,251.56
+PROD-00178,Voyager Camping Our,Sports & Outdoors,Camping,,97.27,65.47
+PROD-00200,Bluepeak Cycling Same,Sports & Outdoors,Cycling,Nimbus,154.3,78.45
+PROD-00149,Pinnacle Makeup During,Beauty,Makeup,Zenith,804.64,321.93
+PROD-00063,Nimbus Decor Seem,Home & Kitchen,Decor,Nimbus,352.62,153.32
+PROD-00265,Zenith Cookware Culture,Home & Kitchen,Cookware,Crestline,117.49,58.72
+PROD-00120,Crestline Pantry Coach,Grocery,Pantry,Zenith,273.23,171.18
+PROD-00186,Pinnacle Decor Color,Home & Kitchen,Decor,Acme,$201.46,146.76
+PROD-00276,Pinnacle Non-Fiction Second,Books,Non-Fiction,Acme,207.92,104.68
+PROD-00031,Nimbus Men Look,Apparel,Men,Zenith,313.67,147.66
+PROD-00079,Acme Cameras Painting,Electronics,Cameras,Voyager,135.53,63.62
+PROD-00132,Zenith Laptops Catch,Electronics,Laptops,Acme,664.96,399.8
+PROD-00110,Nimbus Accessories Appear,Electronics,Accessories,Voyager,297.02,127.74
+PROD-00249,Nimbus Children Set,BOOKS,Children,Pinnacle,471.33,208.9
+PROD-00049,  Acme Snacks American,GROCERY,Snacks,Crestline,265.09,195.93
+PROD-00253,Bluepeak Furniture Those,Home & Kitchen,Furniture,Bluepeak,295.34,212.73
+PROD-00058,Bluepeak Women Model,Apparel,Women,,418.64,175.2
+PROD-00152,Acme Children Staff,Books,Children,Nimbus,105.1,44.93
+PROD-00071,Crestline Haircare Entire,Beauty,Haircare,Acme,193.64,109.56
+PROD-00252,Acme Cameras Many,Electronics,Cameras,Acme,417.08,183.42
+PROD-00021,Halcyon Phones Fight,Electronics,Phones,Acme,32.03,16.12
+PROD-00268,Pinnacle Appliances Film,Home & Kitchen,Appliances,Nimbus,595.95,284.0
+PROD-00127,Zenith Pantry Camera,Grocery,Pantry,Acme,46.61,19.17
+PROD-00194,Voyager Beverages Item,Grocery,Beverages,Crestline,750.42,390.91
+PROD-00165,Zenith Kids Off,Apparel,Kids,Crestline,861.52,383.64
+PROD-00248,Acme Phones Campaign,Electronics,Phones,Zenith,37.69,25.93
+PROD-00207,Halcyon Non-Fiction How,Books,Non-Fiction,Pinnacle,296.1,224.66
+PROD-00097,Nimbus Fitness Grow,Sports & Outdoors,Fitness,Nimbus,572.97,351.33
+PROD-00248,Acme Phones Campaign,Electronics,Phones,Zenith,37.69,25.93
+PROD-00287,Zenith Children Daughter,Books,Children,Pinnacle,495.79,290.42
+PROD-00217,Halcyon Makeup Trouble,Beauty,Makeup,Acme,276.14,143.74
+PROD-00176,Acme Snacks Think,Grocery,Snacks,Acme,619.59,250.33
+PROD-00109,Halcyon Furniture These,Home & Kitchen,Furniture,Crestline,740.78,366.91
+PROD-00096,Crestline Cycling Effort,Sports & Outdoors,Cycling,Pinnacle,829.56,349.18
+PROD-00266,Nimbus Skincare People,Beauty,Skincare,Acme,12.86,7.9
+PROD-00263,Zenith Makeup Decade,Beauty,Makeup,Nimbus,294.1,118.8
+PROD-00179,Crestline Snacks Big,Grocery,Snacks,Pinnacle,519.68,253.24
+PROD-00020,Acme Board Games Report,Toys & Games,Board Games,Pinnacle,200.48,145.02
+PROD-00070,Crestline Action Figures And,Toys & Games,Action Figures,Acme,579.9,263.6
+PROD-00093,Zenith Makeup Employee,Beauty,Makeup,Acme,664.13,281.72
+PROD-00005,Halcyon Snacks Treat,Grocery,Snacks,Bluepeak,723.24,15710.03
+PROD-00054,Zenith Appliances Worker,Home & Kitchen,Appliances,Nimbus,384.42,240.68
+PROD-00255,Acme Camping Common,Sports & Outdoors,Camping,Voyager,18.43,13.83
+PROD-00142,Pinnacle Camping Phone,Sports & Outdoors,Camping,Voyager,551.44,277.06
+PROD-00040,Zenith Camping Hand,Sports & Outdoors,Camping,Bluepeak,26.26,20.13
+PROD-00166,Pinnacle Skincare Receive,Beauty,Skincare,Pinnacle,517.53,353.76
+PROD-00038,Zenith Puzzles This,Toys & Games,Puzzles,Halcyon,666.28,294.08
+PROD-00112,Voyager Fiction Class,Books,Fiction,Crestline,135.75,63.79
+PROD-00030,Crestline Makeup Board,Beauty,Makeup,Acme,129.24,55.33
+PROD-00275,Pinnacle Camping Many,Sports & Outdoors,Camping,Acme,215.41,136.17
+PROD-00296,Zenith Skincare Collection,Beauty,Skincare,Zenith,375.07,176.26
+PROD-00225,  Voyager Children Authority,Books,Children,Bluepeak,17.19,8.5
+PROD-00016,Bluepeak Board Games Professional,Toys & Games,Board Games,Crestline,242.2,163.05
+PROD-00290,Nimbus Haircare Clearly,Beauty,Haircare,Nimbus,585.03,381.95
+PROD-00198,Pinnacle Puzzles Wall,Toys & Games,Puzzles,Zenith,593.12,338.97
+PROD-00283,Crestline Children Site,BOOKS,Children,Halcyon,228.09,123.92
+PROD-00272,Nimbus Beverages Relate   ,Grocery,Beverages,Zenith,665.98,303.43
+PROD-00010,Pinnacle Haircare About,Beauty,Haircare,Crestline,181.39,115.97
+PROD-00015,Acme Snacks Into,Grocery,Snacks,Bluepeak,520.88,229.48
+PROD-00009,Zenith Furniture Network,Home & Kitchen,Furniture,Bluepeak,27.9,11.19
+PROD-00003,Bluepeak Haircare Detail,Beauty,Haircare,,759.45,343.32
+PROD-00066,Crestline Cameras Defense,Electronics,Cameras,Halcyon,79.11,57.95
+PROD-00129,Acme Fiction Able,Books,Fiction,Crestline,446.17,301.59
+PROD-00212,Acme Decor Note,Home & Kitchen,Decor,,54.29,34.67
+PROD-00144,Nimbus Beverages Conference,Grocery,Beverages,Voyager,443.54,243.74
+PROD-00146,Nimbus Cookware Education,Home & Kitchen,Cookware,Nimbus,531.99,241.9
+PROD-00160,Acme Skincare Line,Beauty,Skincare,Crestline,634.96,281.87
+PROD-00170,Acme Appliances Recognize,Home & Kitchen,Appliances,Crestline,479.56,357.01
+PROD-00159,Crestline Puzzles Carry,Toys & Games,Puzzles,Zenith,524.54,233.03
+PROD-00181,Acme Non-Fiction Work,Books,Non-Fiction,Nimbus,276.56,153.47
+PROD-00260,Nimbus Men Work,Apparel,Men,Bluepeak,700.34,296.2
+PROD-00242,Pinnacle Action Figures However,Toys & Games,Action Figures,Nimbus,442.08,227.24
+PROD-00257,Acme Fitness Authority,Sports & Outdoors,Fitness,Zenith,424.73,210.3
+PROD-00151,Crestline Fitness Catch,Sports & Outdoors,Fitness,Nimbus,78.73,48.42
+PROD-00169,Acme Board Games Evidence,Toys & Games,Board Games,Nimbus,372.49,175.73
+PROD-00188,Crestline Non-Fiction Future,Books,Non-Fiction,Zenith,366.6,277.69
+PROD-00039,Nimbus Women Including,Apparel,Women,Acme,208.46,115.36
+PROD-00246,Crestline Puzzles Cup,TOYS & GAMES,Puzzles,Pinnacle,629.44,386.33
+PROD-00139,Nimbus Cameras Child,Electronics,Cameras,Crestline,50.99,34.18
+PROD-00025,Crestline Skincare Lose,Beauty,Skincare,Nimbus,447.09,216.4
+PROD-00251,Nimbus Haircare Land,Beauty,Haircare,Voyager,728.5,360.93
+PROD-00171,Acme Camping Eat,Sports & Outdoors,Camping,Pinnacle,715.3,355.42
+PROD-00069,Crestline Camping Court,Sports & Outdoors,Camping,Halcyon,18.62,13.25
+PROD-00260,Nimbus Men Work,Apparel,Men,Bluepeak,684.24,296.2
+PROD-00247,Pinnacle Snacks Where,Grocery,Snacks,Acme,509.95,252.79
+PROD-00300,Pinnacle Fitness Young,Sports & Outdoors,Fitness,,759.4,353.91
+PROD-00123,Halcyon Skincare Respond,Beauty,Skincare,Halcyon,639.59,396.47
+PROD-00119,Acme Children Direction,Books,Children,Acme,328.84,228.67
+PROD-00245,Acme Puzzles Memory,Toys & Games,Puzzles,Halcyon,181.95,81.11
+PROD-00095,Pinnacle Appliances Song,hOME & kITCHEN,Appliances,Crestline,578.47,350.66
+PROD-00102,Acme Men Subject,Apparel,Men,Nimbus,713.13,290.52
+PROD-00029,Acme Skincare Agree,Beauty,Skincare,Pinnacle,683.41,380.96
+PROD-00023,Acme Non-Fiction Fly,Books,Non-Fiction,Acme,403.55,292.51
+PROD-00297,Halcyon Men Company,Apparel,Men,Zenith,262.73,7392.17
+PROD-00027,Acme Board Games When,Toys & Games,Board Games,Nimbus,957.61,386.8
+PROD-00130,Zenith Puzzles Senior,Toys & Games,Puzzles,Zenith,406.1,261.54
+PROD-00072,Nimbus Pantry Education,Grocery,Pantry,Bluepeak,429.92,225.61
+PROD-00017,Pinnacle Fiction Important,Books,Fiction,Nimbus,656.41,348.4
+PROD-00288,Acme Decor Your,Home & Kitchen,Decor,Halcyon,475.9,241.55
+PROD-00299,Zenith Board Games College,Toys & Games,Board Games,Bluepeak,447.9,198.61
+PROD-00011,Pinnacle Makeup Magazine,Beauty,Makeup,Bluepeak,11.67,5.22
+PROD-00055,Voyager Board Games Industry,Toys & Games,Board Games,Crestline,428.4,279.16
+PROD-00012,Voyager Non-Fiction Price,Books,Non-Fiction,Acme,278.34,157.14
+PROD-00285,Pinnacle Fitness Rock,Sports & Outdoors,Fitness,Nimbus,205.44,95.39
+PROD-00124,Acme Cookware Total,Home & Kitchen,Cookware,Acme,154.57,66.7
+PROD-00284,Crestline Snacks Court,Grocery,Snacks,Halcyon,285.24,170.67
+PROD-00090,Pinnacle Appliances Blood,Home & Kitchen,Appliances,Crestline,720.44,377.28
+PROD-00184,Voyager Children Drug,Books,Children,Bluepeak,452.38,319.04
+PROD-00215,Nimbus Fiction Traditional,Books,Fiction,Acme,207.61,133.25
+PROD-00187,Acme Snacks Pm,Grocery,Snacks,Voyager,$85.53,42.07
+PROD-00277,Bluepeak Fiction Little,Books,Fiction,Voyager,42.99,20.77
+PROD-00185,Crestline Men Song,Apparel,Men,Zenith,540.11,239.94
+PROD-00033,Zenith Beverages Forward,Grocery,Beverages,Halcyon,81.11abc,49.31
+PROD-00195,Voyager Non-Fiction Create,Books,Non-Fiction,Halcyon,380.61,220.53
+PROD-00291,Crestline Beverages Attack,Grocery,Beverages,Pinnacle,360.0,181.37
+PROD-00121,Pinnacle Puzzles Once,Toys & Games,Puzzles,Halcyon,439.63,11804.61
+PROD-00189,Pinnacle Cameras Husband,Electronics,Cameras,Acme,665.14,364.26
+PROD-00222,Halcyon Puzzles Him,Toys & Games,Puzzles,Zenith,-693.41,382.95
+PROD-00024,Halcyon Accessories Enter,Electronics,Accessories,Zenith,601.86,243.97
+PROD-00158,Voyager Furniture Cut,Home & Kitchen,Furniture,Acme,593.42,280.88
+PROD-00279,Voyager Puzzles Look,Toys & Games,Puzzles,Bluepeak,485.2,213.95
+PROD-00239,Acme Skincare War,Beauty,Skincare,Crestline,548.48,253.89
+PROD-00020,Acme Board Games Report,Toys & Games,Board Games,Pinnacle,197.32,145.02
+PROD-00177,Crestline Appliances Middle,home & kitchen,Appliances,Voyager,298.8,199.18
+PROD-00052,Acme Furniture Future,Home & Kitchen,Furniture,Zenith,482.62,271.91
+PROD-00083,Acme Appliances The,Home & Kitchen,Appliances,Bluepeak,186.4,102.18
+PROD-00220,Bluepeak Snacks Particularly,gROCERY,Snacks,Acme,281.74,133.31
+PROD-00019,Acme Skincare Participant,Beauty,Skincare,Voyager,171.96,75.65
+PROD-00026,Zenith Camping Usually,Sports & Outdoors,Camping,Pinnacle,188.59,81.51
+PROD-00100,Voyager Haircare Sound,Beauty,Haircare,Pinnacle,127.42,64.74
+PROD-00292,Halcyon Cameras Far,Electronics,Cameras,Nimbus,364.67,168.71
+PROD-00046,Voyager Phones Population,Electronics,Phones,Halcyon,483.24,212.54
+PROD-00103,Crestline Makeup Suggest,Beauty,Makeup,Pinnacle,115.11,87.1
+PROD-00048,Nimbus Board Games Small,Toys & Games,Board Games,Nimbus,566.67,245.55
+PROD-00203,Halcyon Board Games Involve,Toys & Games,Board Games,Zenith,474.27,315.86
+PROD-00061,Nimbus Beverages Smile,Grocery,Beverages,Pinnacle,98.67,73.38
+PROD-00231,Crestline Cycling A,Sports & Outdoors,Cycling,Voyager,571.97,317.03
+PROD-00084,Pinnacle Decor Laugh,home & kitchen,Decor,Crestline,415.81,189.39
+PROD-00078,Zenith Laptops Attack,Electronics,Laptops,Pinnacle,423.58,284.64
+PROD-00045,  Bluepeak Cycling Southern,Sports & Outdoors,Cycling,Crestline,254.19,145.6
+PROD-00270,Zenith  Fiction Task,Books,Fiction,Bluepeak,571.75,397.41
+PROD-00128,Acme Board Games Expect,Toys & Games,Board Games,Nimbus,519.23,231.42
+PROD-00180,Zenith Puzzles Send,toys & games,Puzzles,Crestline,690.34,336.71
+PROD-00162,Zenith Board Games Writer,Toys & Games,Board Games,Acme,59.17,42.68
+PROD-00099,Acme Snacks Bar,Grocery,Snacks,Pinnacle,113.07,55.94
+PROD-00174,Acme Shoes Put,Apparel,Shoes,Zenith,605.63,327.81
+PROD-00227,Pinnacle Laptops Face,Electronics,Laptops,Pinnacle,718.43,327.39
+PROD-00265,Zenith Cookware Culture,Home & Kitchen,Cookware,Crestline,117.49,58.72
+PROD-00114,Bluepeak Beverages Information,Grocery,Beverages,Halcyon,234.44,111.6
+PROD-00216,Acme Furniture Pick,Home & Kitchen,Furniture,Zenith,508.45,362.59
+PROD-00047,Nimbus Action Figures Protect,Toys & Games,Action Figures,Zenith,631.76,292.03
+PROD-00014,Zenith Cameras Car,Electronics,Cameras,Acme,-123.21,92.42
+PROD-00044,Nimbus Camping Physical,Sports & Outdoors,Camping,Bluepeak,313.17,172.96
+PROD-00071,Crestline Haircare Entire,Beauty,Haircare,Acme,193.64,109.56
+PROD-00143,Acme Camping Clearly,Sports & Outdoors,Camping,Voyager,769.33,359.64
+PROD-00089,Bluepeak Cameras Throughout,Electronics,Cameras,Crestline,284.92,174.98
+PROD-00154,Halcyon Makeup Arrive,Beauty,Makeup,Nimbus,117.44,47.31
+PROD-00201,Pinnacle Makeup Natural,Beauty,Makeup,Crestline,504.34,266.61
+PROD-00163,Voyager Pantry Pm,Grocery,Pantry,Bluepeak,264.99,126.62
+PROD-00057,Nimbus Camping Performance,Sports & Outdoors,Camping,Zenith,90.42,48.03
+PROD-00069,Crestline Camping Court,Sports & Outdoors,Camping,Halcyon,17.79,13.25
+PROD-00259,Voyager Furniture Skill,Home & Kitchen,Furniture,Halcyon,78.23,52.18
+PROD-00101,Acme Snacks Remain,Grocery,Snacks,Voyager,?,85.45
+PROD-00191,Bluepeak Snacks Provide,Grocery,Snacks,Halcyon,568.45,237.66
+PROD-00147,Acme Appliances Age,Home & Kitchen,Appliances,Bluepeak,137.14,105.15
+PROD-00208,Voyager Board Games Feeling,Toys & Games,Board Games,Voyager,565.24,298.64
+PROD-00068,Acme Skincare Figure,Beauty,Skincare,Nimbus,26.21,14.14
+PROD-00191,Bluepeak Snacks Provide,Grocery,Snacks,Halcyon,568.45,237.66
+PROD-00278,Voyager Women Treatment,Apparel,Women,Voyager,150.62,61.49
+PROD-00223,Crestline Non-Fiction Dinner,Books,Non-Fiction,Zenith,516.6,252.39
+PROD-00280,Zenith Camping Deal,Sports & Outdoors,Camping,Halcyon,436.42,276.94
+PROD-00140,Halcyon Haircare Every,Beauty,Haircare,Nimbus,141.97,60.4
+PROD-00172,Pinnacle Fitness Go,Sports & Outdoors,Fitness,Bluepeak,347.74,143.07
+PROD-00274,Acme Cycling Owner,Sports & Outdoors,Cycling,Zenith,650.96,308.31
+PROD-00075,Crestline  Cookware Inside,Home & Kitchen,Cookware,Bluepeak,423.08,258.82
+PROD-00076,Voyager Fiction Edge,Books,Fiction,Nimbus,387.72,201.33
+PROD-00060,Crestline Camping Strategy,Sports & Outdoors,Camping,Voyager,619.04,268.47
+PROD-00269,Crestline Fitness Full,Sports & Outdoors,Fitness,Crestline,481.29,213.34
+PROD-00133,Crestline Accessories Provide,Electronics,Accessories,Bluepeak,58.95,36.19
+PROD-00008,Acme Cycling Whatever,Sports & Outdoors,Cycling,Crestline,125.47,72.01
+PROD-00234,Acme Beverages Among,Grocery,Beverages,Halcyon,579.67,279.66
+PROD-00125,Nimbus Board Games Whom,Toys & Games,Board Games,Voyager,332.99,190.4
+PROD-00250,Voyager Children Good,Books,Children,Halcyon,370.08,158.38
+PROD-00196,Zenith Appliances Per,home & kitchen,Appliances,Acme,317.3,13798.97
+PROD-00064,Voyager Makeup Cell,Beauty,Makeup,Bluepeak,346.69,144.74
+PROD-00041,Nimbus Kids Station,Apparel,Kids,Voyager,386.39,226.05
+PROD-00156,Acme Cycling Agreement,Sports & Outdoors,Cycling,Crestline,145.36,111.52
+PROD-00070,Crestline Action Figures And,Toys & Games,Action Figures,Acme,616.34,263.6
+PROD-00203,Halcyon Board Games Involve,Toys & Games,Board Games,Zenith,474.27,315.86
+PROD-00092,Nimbus Pantry Thus,Grocery,Pantry,Nimbus,264.73,145.53
+PROD-00111,Pinnacle Board Games Think,Toys & Games,Board Games,Pinnacle,840.66,364.62
+PROD-00197,Halcyon Camping Fast,Sports & Outdoors,Camping,Halcyon,375.12,203.47
+PROD-00042,Halcyon Cookware Future,Home & Kitchen,Cookware,Crestline,530.0,261.99
+PROD-00183,Voyager Shoes Government,Apparel,Shoes,,527.03,232.44
+PROD-00219,Crestline Appliances Low,Home & Kitchen,Appliances,Voyager,223.2,142.01
+PROD-00267,Voyager Makeup Child,Beauty,Makeup,Bluepeak,702.42,324.65
+PROD-00295,Voyager Furniture Phone,Home & Kitchen,Furniture,Zenith,936.99,389.31
+PROD-00067,Nimbus Board Games Condition,Toys & Games,Board Games,Pinnacle,466.65,335.83
+PROD-00035,  Nimbus Cookware Goal,Home & Kitchen,Cookware,Crestline,119.52,78.64
+PROD-00131,Bluepeak Cameras Spend,Electronics,Cameras,Nimbus,245.12,181.12
+PROD-00145,Acme Women Field,Apparel,Women,,748.09,303.77
+PROD-00007,Halcyon Shoes Degree,Apparel,Shoes,Acme,516.96,348.82
+PROD-00073,Bluepeak Appliances Affect,Home & Kitchen,Appliances,Bluepeak,771.64,356.64
+PROD-00168,Nimbus Phones College,Electronics,Phones,Zenith,589.11,338.37
+PROD-00256,Bluepeak Cycling Know,Sports & Outdoors,Cycling,Crestline,668.2,391.97
+PROD-00281,Voyager Non-Fiction Of,Books,Non-Fiction,,13.92,5.69
+PROD-00002,Bluepeak Fitness Seek,Sports & Outdoors,Fitness,Pinnacle,419.31,200.97
+PROD-00082,Halcyon Camping Always,Sports & Outdoors,Camping,Voyager,176.37,76.16
+PROD-00064,Voyager Makeup Cell,Beauty,Makeup,Bluepeak,346.69,144.74
+PROD-00126,Voyager Puzzles Soon,Toys & Games,Puzzles,Bluepeak,264.97,132.81
+PROD-00116,Halcyon Snacks Cell,Grocery,Snacks,Zenith,639.5,296.32
+PROD-00173,Pinnacle Decor Ask,Home & Kitchen,Decor,Acme,353.1,191.77
+PROD-00037,Halcyon Decor Respond,Home & Kitchen,Decor,Zenith,581.74,261.11
+PROD-00213,Pinnacle Fitness Some,Sports & Outdoors,Fitness,Zenith,$951.83,381.54
+PROD-00081,Zenith Snacks Trip,Grocery,Snacks,Acme,358.39,153.27
+PROD-00135,Bluepeak Skincare Wonder,Beauty,Skincare,Halcyon,450.12,236.06
+PROD-00059,Acme Pantry Tree,Grocery,Pantry,Acme,159.47,92.58
