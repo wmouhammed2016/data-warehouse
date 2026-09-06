@@ -1312,3 +1312,121 @@ WHEN NOT MATCHED THEN
     INSERT (payment_id, order_id, customer_key, payment_date_key, payment_method_key, amount, payment_status)
     VALUES (src.payment_id, src.order_id, src.customer_key, src.payment_date_key, src.payment_method_key, src.amount, src.payment_status);
 GO
+
+-- ============================================================
+-- GOLD LAYER -- VIEWS (virtual alternative to the gold tables above)
+-- ============================================================
+-- The gold.dim_* / gold.fact_* TABLES above are left exactly as they were.
+-- These views are a second, independent implementation of the same star
+-- schema, computed live from silver on every query instead of being
+-- loaded/materialized:
+--   - No surrogate IDENTITY keys -- a view can't own one, so dimension
+--     and fact views join on the natural business key directly
+--     (customer_id, product_id, order_id) instead of an integer key.
+--   - No separate load step and therefore never stale -- querying the
+--     view re-reads silver at that moment.
+--   - No FK/PK constraints -- SQL Server views cannot carry them, so
+--     referential integrity here is a property of the join logic only,
+--     not something the engine enforces.
+--   - Same Unknown-member fallback in spirit: a fact row whose natural
+--     key doesn't resolve gets 'UNKNOWN' instead of being dropped.
+--   - vw_dim_date is the one real structural difference from its table
+--     counterpart: the table is a gapless calendar spine built with a
+--     recursive CTE, which SQL Server does not allow inside a view
+--     (OPTION MAXRECURSION isn't permitted in a view body, and our date
+--     range exceeds the default 100-row recursion limit). So vw_dim_date
+--     instead lists only the dates that actually appear in silver.orders
+--     / silver.payments -- every date a fact view needs will resolve,
+--     it just isn't a continuous calendar.
+
+IF OBJECT_ID('gold.vw_dim_customer', 'V') IS NOT NULL DROP VIEW gold.vw_dim_customer;
+GO
+CREATE VIEW gold.vw_dim_customer AS
+SELECT
+    customer_id, first_name, last_name, email, phone, city, state, country,
+    signup_date, loyalty_tier, marketing_opt_in, preferred_channel, birth_date, gender
+FROM silver.customers
+UNION ALL
+SELECT 'UNKNOWN', 'Unknown', 'Unknown', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL;
+GO
+
+IF OBJECT_ID('gold.vw_dim_product', 'V') IS NOT NULL DROP VIEW gold.vw_dim_product;
+GO
+CREATE VIEW gold.vw_dim_product AS
+SELECT
+    product_id, product_name, category, sub_category, brand, unit_price, cost_price,
+    warehouse_location, stock_quantity, reorder_level, supplier_name
+FROM silver.products
+UNION ALL
+SELECT 'UNKNOWN', 'Unknown', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL;
+GO
+
+IF OBJECT_ID('gold.vw_dim_payment_method', 'V') IS NOT NULL DROP VIEW gold.vw_dim_payment_method;
+GO
+CREATE VIEW gold.vw_dim_payment_method AS
+SELECT payment_method FROM (
+    SELECT DISTINCT payment_method FROM silver.payments WHERE payment_method IS NOT NULL
+    UNION ALL
+    SELECT 'Unknown'
+) AS pm;
+GO
+
+IF OBJECT_ID('gold.vw_dim_date', 'V') IS NOT NULL DROP VIEW gold.vw_dim_date;
+GO
+CREATE VIEW gold.vw_dim_date AS
+SELECT
+    CONVERT(INT, FORMAT(d, 'yyyyMMdd')) AS date_key,
+    d AS full_date,
+    YEAR(d) AS [year],
+    DATEPART(QUARTER, d) AS [quarter],
+    MONTH(d) AS [month],
+    DATENAME(MONTH, d) AS month_name,
+    DAY(d) AS [day],
+    DATEPART(WEEKDAY, d) AS day_of_week,
+    DATENAME(WEEKDAY, d) AS day_name,
+    CASE WHEN DATENAME(WEEKDAY, d) IN ('Saturday', 'Sunday') THEN 1 ELSE 0 END AS is_weekend
+FROM (
+    SELECT DISTINCT order_date AS d FROM silver.orders WHERE order_date IS NOT NULL
+    UNION
+    SELECT DISTINCT payment_date FROM silver.payments WHERE payment_date IS NOT NULL
+) AS dates
+UNION ALL
+SELECT 19000101, '1900-01-01', 1900, 1, 1, 'Unknown', 1, 0, 'Unknown', 0;
+GO
+
+IF OBJECT_ID('gold.vw_fact_order_items', 'V') IS NOT NULL DROP VIEW gold.vw_fact_order_items;
+GO
+CREATE VIEW gold.vw_fact_order_items AS
+SELECT
+    oi.order_item_id,
+    oi.order_id,
+    ISNULL(dc.customer_id, 'UNKNOWN') AS customer_id,
+    ISNULL(dp.product_id, 'UNKNOWN') AS product_id,
+    ISNULL(dd.date_key, 19000101) AS order_date_key,
+    oi.quantity,
+    oi.unit_price,
+    oi.discount_pct,
+    CAST(ISNULL(oi.quantity, 0) * ISNULL(oi.unit_price, 0) * (1 - ISNULL(oi.discount_pct, 0)) AS DECIMAL(12,2)) AS net_amount
+FROM silver.order_items oi
+LEFT JOIN silver.orders o ON o.order_id = oi.order_id
+LEFT JOIN silver.customers dc ON dc.customer_id = o.customer_id
+LEFT JOIN silver.products dp ON dp.product_id = oi.product_id
+LEFT JOIN gold.vw_dim_date dd ON dd.full_date = o.order_date;
+GO
+
+IF OBJECT_ID('gold.vw_fact_payments', 'V') IS NOT NULL DROP VIEW gold.vw_fact_payments;
+GO
+CREATE VIEW gold.vw_fact_payments AS
+SELECT
+    p.payment_id,
+    p.order_id,
+    ISNULL(dc.customer_id, 'UNKNOWN') AS customer_id,
+    ISNULL(dd.date_key, 19000101) AS payment_date_key,
+    ISNULL(p.payment_method, 'Unknown') AS payment_method,
+    p.amount,
+    p.payment_status
+FROM silver.payments p
+LEFT JOIN silver.orders o ON o.order_id = p.order_id
+LEFT JOIN silver.customers dc ON dc.customer_id = o.customer_id
+LEFT JOIN gold.vw_dim_date dd ON dd.full_date = p.payment_date;
+GO
