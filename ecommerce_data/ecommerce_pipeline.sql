@@ -129,7 +129,6 @@ END;
 GO
 
 -- Truncate + reload every staging table from its current batch file.
-
 TRUNCATE TABLE staging.customers;
 
 BULK INSERT staging.customers
@@ -517,12 +516,25 @@ BEGIN
 END;
 GO
 
+WITH customer_latest AS
+(
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY bronze_id DESC) AS rn
+    FROM bronze.customers
+    WHERE NULLIF(LTRIM(RTRIM(customer_id)), '') IS NOT NULL
+)
+SELECT *
+FROM customer_latest;
+
+-- CTE-001
 WITH cust_latest AS (
     SELECT *,
         ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY bronze_id DESC) AS rn
     FROM bronze.customers
     WHERE NULLIF(LTRIM(RTRIM(customer_id)), '') IS NOT NULL
 ),
+-- CTE-002
 cust_cleaned AS (
     SELECT
         LTRIM(RTRIM(customer_id)) AS customer_id,
@@ -530,6 +542,14 @@ cust_cleaned AS (
         NULLIF(LTRIM(RTRIM(last_name)), '') AS last_name,
         NULLIF(LTRIM(RTRIM(email)), '') AS email,
         NULLIF(LTRIM(RTRIM(phone)), '') AS phone,
+        /*
+            So, using the two null check configuration in the sign up date is mandatory
+            the first try_cast will get null in both cases either the main value is missing
+            or the raw value is invalid.
+            So, we need to have the raw value beside the casted value to chekc if there is missing
+            value or invalid value.
+            This will happen also with all the other values that we need to check the missing and the invalid values.
+        */
         TRY_CAST(NULLIF(LTRIM(RTRIM(signup_date)), '') AS DATE) AS signup_date,
         NULLIF(LTRIM(RTRIM(signup_date)), '') AS raw_signup_date,
         NULLIF(LTRIM(RTRIM(city)), '') AS city,
@@ -537,50 +557,84 @@ cust_cleaned AS (
         NULLIF(LTRIM(RTRIM(country)), '') AS country,
         cust_latest.rn
     FROM cust_latest
+    -- Now, we only selected the first ranked customer with the latest update value
     WHERE cust_latest.rn = 1
 ),
+-- CTE-003
 prof_latest AS (
     SELECT *,
         ROW_NUMBER() OVER (PARTITION BY profile_id ORDER BY bronze_id DESC) AS rn
     FROM bronze.customer_profiles
     WHERE NULLIF(LTRIM(RTRIM(profile_id)), '') IS NOT NULL
 ),
+-- CTE-004
 prof_cleaned AS (
     SELECT
         NULLIF(LTRIM(RTRIM(profile_id)), '') AS profile_id,
         NULLIF(LTRIM(RTRIM(loyalty_tier)), '') AS loyalty_tier,
-        CASE WHEN UPPER(LTRIM(RTRIM(marketing_opt_in))) = 'YES' THEN CAST(1 AS BIT) WHEN UPPER(LTRIM(RTRIM(marketing_opt_in))) = 'NO' THEN CAST(0 AS BIT) ELSE NULL END AS marketing_opt_in,
+        -- In this column we are going to convert the YES, NO into 0 and 1.
+        -- I think we can stick to the original data from the table instead
+        -- of converting into 0 and 1 because we are going to convert later on 
+        -- in Power BI or Python.
+        CASE
+            WHEN UPPER(LTRIM(RTRIM(marketing_opt_in))) = 'YES' THEN CAST(1 AS BIT)
+            WHEN UPPER(LTRIM(RTRIM(marketing_opt_in))) = 'NO' THEN CAST(0 AS BIT)
+            ELSE NULL 
+        END AS marketing_opt_in,
         NULLIF(LTRIM(RTRIM(marketing_opt_in)), '') AS raw_marketing_opt_in,
         NULLIF(LTRIM(RTRIM(preferred_channel)), '') AS preferred_channel,
+        -- The same as the signup date, we need to have the raw value beside the casted value to chekc if there is missing
         TRY_CAST(NULLIF(LTRIM(RTRIM(birth_date)), '') AS DATE) AS birth_date,
         NULLIF(LTRIM(RTRIM(birth_date)), '') AS raw_birth_date,
-        NULLIF(LTRIM(RTRIM(gender)), '') AS gender
-        , CASE WHEN LTRIM(RTRIM(customer_id)) IS NULL OR LTRIM(RTRIM(customer_id)) = '' THEN NULL WHEN PATINDEX('%[0-9]%', LTRIM(RTRIM(customer_id))) = 0 THEN NULL ELSE 'CUST-' + RIGHT(REPLICATE('0', 6) + CASE WHEN PATINDEX('%[0-9]%', LTRIM(RTRIM(customer_id))) = 0 THEN NULL ELSE STUFF(LTRIM(RTRIM(customer_id)), 1, PATINDEX('%[0-9]%', LTRIM(RTRIM(customer_id))) - 1, '') END, 6) END AS matched_customer_id
+        NULLIF(LTRIM(RTRIM(gender)), '') AS gender,
+        CASE
+            WHEN LTRIM(RTRIM(customer_id)) IS NULL OR LTRIM(RTRIM(customer_id)) = '' THEN NULL
+            WHEN PATINDEX('%[0-9]%', LTRIM(RTRIM(customer_id))) = 0 THEN NULL
+            ELSE 'CUST-' + RIGHT(REPLICATE('0', 6) +
+                CASE
+                    WHEN PATINDEX('%[0-9]%', LTRIM(RTRIM(customer_id))) = 0 THEN NULL
+                    ELSE STUFF(LTRIM(RTRIM(customer_id)), 1, PATINDEX('%[0-9]%', LTRIM(RTRIM(customer_id))) - 1, '')
+                END, 6)
+            END AS matched_customer_id
     FROM prof_latest
     WHERE prof_latest.rn = 1
 ),
+-- CTE-005
+-- So, the purpose of this CTE is to rank the profiles based on the customer_id
+-- coming after the cleaning of the customer_profiles
+-- It seems we may have multiple profiles for the same customer
+-- So, we need to rank them. 
 prof_ranked AS (
     SELECT *,
         ROW_NUMBER() OVER (PARTITION BY matched_customer_id ORDER BY profile_id DESC) AS prn
     FROM prof_cleaned
     WHERE matched_customer_id IS NOT NULL
 ),
+-- CTE-006
 flagged AS (
     SELECT
         c.customer_id, c.first_name, c.last_name, c.email, c.phone, c.signup_date, c.city, c.state, c.country,
         p.profile_id, p.loyalty_tier, p.marketing_opt_in, p.preferred_channel, p.birth_date, p.gender,
         CASE WHEN
-            c.first_name IS NULL
-        OR c.last_name IS NULL
-        OR c.email IS NULL
-        OR c.signup_date IS NULL
-        THEN 1 ELSE 0 END AS has_missing_value,
+                    c.first_name IS NULL
+                OR  c.last_name IS NULL
+                OR  c.email IS NULL
+                OR  c.signup_date IS NULL
+            THEN 1 
+            ELSE 0 
+            END AS has_missing_value,
+        
         CASE WHEN
-            c.raw_signup_date IS NOT NULL AND c.signup_date IS NULL
-        OR p.raw_marketing_opt_in IS NOT NULL AND p.marketing_opt_in IS NULL
-        OR p.raw_birth_date IS NOT NULL AND p.birth_date IS NULL
-        OR (c.email IS NOT NULL AND c.email NOT LIKE '%_@__%.__%')
-        THEN 1 ELSE 0 END AS has_invalid_value,
+                c.raw_signup_date IS NOT NULL 
+            AND c.signup_date IS NULL
+            OR  p.raw_marketing_opt_in IS NOT NULL
+            AND p.marketing_opt_in IS NULL
+            OR  p.raw_birth_date IS NOT NULL
+            AND p.birth_date IS NULL
+            OR (c.email IS NOT NULL AND c.email NOT LIKE '%_@__%.__%')
+        THEN 1 
+        ELSE 0 
+        END AS has_invalid_value,
         CAST(0 AS BIT) AS has_outlier_value
     FROM cust_cleaned c
     LEFT JOIN prof_ranked p
