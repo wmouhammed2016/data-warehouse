@@ -478,7 +478,6 @@ SELECT payment_id, order_id, payment_method, amount, payment_date, payment_statu
 FROM bronze.payments;
 GO
 
-
 -- ============================================================
 -- SILVER LAYER
 -- ============================================================
@@ -516,16 +515,6 @@ BEGIN
 END;
 GO
 
-WITH customer_latest AS
-(
-    SELECT
-        *,
-        ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY bronze_id DESC) AS rn
-    FROM bronze.customers
-    WHERE NULLIF(LTRIM(RTRIM(customer_id)), '') IS NOT NULL
-)
-SELECT *
-FROM customer_latest;
 
 -- CTE-001
 WITH cust_latest AS (
