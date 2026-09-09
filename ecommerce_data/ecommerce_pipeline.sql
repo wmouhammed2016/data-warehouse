@@ -517,6 +517,7 @@ GO
 
 
 -- CTE-001
+-- So, this CTE is dedicated for getting the latest version of the customer's data from the bronze layer
 WITH cust_latest AS (
     SELECT *,
         ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY bronze_id DESC) AS rn
@@ -524,6 +525,7 @@ WITH cust_latest AS (
     WHERE NULLIF(LTRIM(RTRIM(customer_id)), '') IS NOT NULL
 ),
 -- CTE-002
+-- This CTE dedicated for building the cleaning pipeline for the customers data from the bronze layer
 cust_cleaned AS (
     SELECT
         LTRIM(RTRIM(customer_id)) AS customer_id,
@@ -570,6 +572,7 @@ prof_cleaned AS (
             WHEN UPPER(LTRIM(RTRIM(marketing_opt_in))) = 'NO' THEN CAST(0 AS BIT)
             ELSE NULL 
         END AS marketing_opt_in,
+        -- This line is for identifying if the data is missing or invalid
         NULLIF(LTRIM(RTRIM(marketing_opt_in)), '') AS raw_marketing_opt_in,
         NULLIF(LTRIM(RTRIM(preferred_channel)), '') AS preferred_channel,
         -- The same as the signup date, we need to have the raw value beside the casted value to chekc if there is missing

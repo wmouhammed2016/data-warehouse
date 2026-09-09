@@ -2,3 +2,9 @@
 .venv/
 
 encounters_1m.csv
+
+# Local Python DB credentials
+python_connection/.env
+
+# Ignoring python_connection folder
+python_connection/
